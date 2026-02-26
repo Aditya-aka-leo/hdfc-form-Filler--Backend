@@ -17,7 +17,7 @@ async function getSessions(req, res) {
 
 // POST /api/v1/sessions
 async function createSession(req, res) {
-  const { id, label, savedAt, pathname, data, excluded, createdBy } = req.body;
+  const { id, label, savedAt, pathname, data, excluded, createdBy, steps } = req.body;
 
   // Manual required-field checks (gives clearer messages than Mongoose alone)
   const missing = ["id", "label", "savedAt", "pathname", "data", "createdBy"].filter(
@@ -34,6 +34,7 @@ async function createSession(req, res) {
     pathname,
     data,
     excluded: excluded ?? [],
+    steps: Array.isArray(steps) ? steps : [],
     createdBy,
     isPublic: true,
   });

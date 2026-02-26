@@ -35,6 +35,10 @@ const sessionSchema = new mongoose.Schema(
       type: [String],
       default: [],
     },
+    steps: {
+      type: [mongoose.Schema.Types.Mixed],
+      default: [],
+    },
     createdBy: {
       type: String,
       required: true,
