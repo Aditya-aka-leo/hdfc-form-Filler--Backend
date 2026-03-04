@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     volumes:
       - mongo_data:/data/db
-    # Not exposed externally — only reachable inside Docker network
+
 
   backend:
     build: .

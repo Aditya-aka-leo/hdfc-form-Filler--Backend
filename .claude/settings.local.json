@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(npm install)",
-      "Bash(timeout 5 node src/server.js)"
+      "Bash(timeout 5 node src/server.js)",
+      "Bash(git checkout -b v3)",
+      "Bash(git push -u origin v3)",
+      "Bash(git checkout -b v4)",
+      "Bash(docker compose up --build)",
+      "Bash(docker compose down)",
+      "Bash(docker compose up --build -d)",
+      "Bash(git add .dockerignore Dockerfile docker-compose.yml nginx/ .env.example)",
+      "Bash(git commit:*)",
+      "Bash(git push -u origin v4)"
     ]
   }
 }
